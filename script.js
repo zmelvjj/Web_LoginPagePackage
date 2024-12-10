@@ -2,7 +2,7 @@ let userName;
 let userNum;
 let socketState = false;
 
-const socket = io("http://192.168.219.103:3001", {
+const socket = io("http://000.000.000.000:3001", {
   query: {
     Password: "WEB_CLUBFESTIVAL",
   },
