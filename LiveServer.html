@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        user-select: none;
+      }
+
+      #login-container {
+        position: absolute;
+        background-color: white;
+        border-radius: 20px;
+        width: 60vh;
+        height: 35vh;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 4px 9px 10px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #title {
+        position: absolute;
+        top: -2%;
+        font-size: 5vh;
+      }
+
+      #labelStudentNum {
+        position: absolute;
+        display: block;
+        font-size: 3.5vh;
+        left: 5%;
+        top: 44%;
+      }
+
+      #inputStudentNum {
+        position: absolute;
+        width: 57%;
+        left: 32%;
+        padding: 2vh;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        top: 44%;
+      }
+
+      #login-button {
+        position: absolute;
+        width: 90%;
+        font-size: 3.5vh;
+        left: 50%;
+        transform: translate(-50%);
+        cursor: pointer;
+        border-radius: 5px;
+        color: #6e6e6e;
+        background-color: white;
+        border: 1px solid #ccc;
+        top: 78%;
+      }
+
+      #error-message {
+        position: absolute;
+        top: 105%;
+        transform: translate(-50%);
+        font-size: 2.5vh;
+        width: 80%;
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="login-container">
+        <h2 id="title">< 로그인 ></h2>
+        <form id="logForm">
+          <label for="StudentNum" id="labelStudentNum">학번이름:</label>
+          <input
+            type="text" 
+            id="inputStudentNum"
+            name="StudentNum"
+            placeholder="예: 20716이규민"
+            autocomplete="off"
+          />
+
+          <div id="error-message">
+            학번 또는 이름을 확인할수 없습니다. 같은 현상이 지속된다면 관리자를
+            불러주에요.
+          </div>
+
+          <button id="login-button">로그인</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="http://192.168.219.103:3001/socket.io/socket.io.js"></script>
+    <script src="LiveServerModule/script.js"></script>
+  </body>
+</html>
